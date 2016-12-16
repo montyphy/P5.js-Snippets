@@ -42,7 +42,7 @@ function Particle(pos) {
   this.vel = createVector(0, v);
   this.vel.rotate(ang);
 
-  this.acc = createVector(0, 0.1);
+  this.acc = createVector(0, 0.04);
 
   this.radius = random(2, 7);
 
