@@ -64,6 +64,8 @@ function Drop() {
 
   this.update = function() {
     this.y = this.y + this.vel;
+    this.vel = this.vel + 0.1;
+
     if (this.y > height) {
       if (rain.length > numDropsSlider.value()) {
         this.cull = true;
@@ -72,6 +74,7 @@ function Drop() {
         this.x = random(width);
         this.y = random(-height);
         this.z = random(this.minZ, this.maxZ);
+        this.vel = random(this.maxVel, this.minVel) * map(this.z, this.minZ, this.maxZ, 1, 0.8);
       }
     }
   }
