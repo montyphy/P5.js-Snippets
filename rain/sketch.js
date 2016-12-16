@@ -20,7 +20,7 @@ function setup() {
 function draw() {
   background(0);
   stroke(100, 200, 250);
-  for (var i = rain.length-1; i > 0; i--) {
+  for (var i = rain.length-1; i >= 0; i--) {
     rain[i].update();
     rain[i].show();
 
