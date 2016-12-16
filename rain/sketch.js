@@ -46,7 +46,7 @@ function Drop() {
   this.maxZ = 5;
   this.minSize = 2;
   this.maxSize = 12;
-  this.minVel = 5;
+  this.minVel = 4;
   this.maxVel = 10;
 
   this.x = random(width);
@@ -54,7 +54,7 @@ function Drop() {
   this.z = random(this.minZ, this.maxZ);
 
   this.size = map(this.z, this.minZ, this.maxZ, this.maxSize, this.minSize);
-  this.vel = map(this.z, this.minZ, this.maxZ, this.maxVel, this.minVel);
+  this.vel = random(this.maxVel, this.minVel) * map(this.z, this.minZ, this.maxZ, 1, 0.8);
   this.thickness = map(this.z, this.minZ, this.maxZ, 3, 1);
 
   this.show = function() {
