@@ -1,0 +1,56 @@
+.jsConsole {
+  border: 1px solid #444;
+  height: 10em;
+  overflow-y: scroll;
+  margin: 1em;
+}
+
+.jsConsole-entry {
+  text-align: left;
+  color: #444;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.jsConsole-msg {
+  display: inline-block;
+  word-break: break-all;
+  text-align: left;
+  width: 100%;
+}
+
+.jsConsole-msg-nots {
+  float: left;
+  width: 90%;
+}
+
+.jsConsole-timestamp {
+  display: inline-block;
+  text-align: right;
+  width: 10%;
+}
+
+.jsConsole-lvl-debug {
+  color: #D2D2D2;
+}
+.jsConsole-lvl-info {
+  color: #444444;
+}
+.jsConsole-lvl-notice {
+  color: #009300;
+}
+.jsConsole-lvl-warning {
+  color: #009393;
+}
+.jsConsole-lvl-error {
+  color: #00007F;
+}
+.jsConsole-lvl-critical {
+  color: #FC7F00;
+}
+.jsConsole-lvl-alert {
+  color: #7F0000;
+}
+.jsConsole-lvl-emergency {
+  background-color: #000000;
+  color: #FFFFFF;
+}

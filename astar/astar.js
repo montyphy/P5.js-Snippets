@@ -62,11 +62,12 @@ function AStar(grid, start, end) {
       // If the spot is the goal
       if (current === this.end) {
         this.finished = true;         // Finished
+        webconsole.log("DONE");
         console.log("DONE");
 
         this.path = this.generatePath(current);   // Generate the path to goal
 
-        return 2;
+        return -1;
       }
       // else
       // Update the sets
@@ -116,7 +117,8 @@ function AStar(grid, start, end) {
     this.path = this.generatePath( this.closestSpot );
     this.finished = true;
     console.log('No solution');
-    return -1;
+    webconsole.log("No solution");
+    return -2;
   };
 
   this.generatePath = function(spot) {

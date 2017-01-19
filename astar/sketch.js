@@ -17,6 +17,7 @@ var global = {
   height: 600,
   cols: 80,
   rows: 60,
+  setup: false,
   steps: 1,     // number of steps to do per draw update
   wallChance: 0.3,
   walls: [
@@ -34,13 +35,9 @@ var global = {
 
 
 
-
-
-function setup() {
-  var canvas = createCanvas(global.width, global.height);
-  canvas.parent("canvas");
-
+function start() {
   console.log("A*");
+  webconsole.log("Starting...");
 
   var grid = new Grid(global.rows, global.cols);
   global.grid = grid;
@@ -57,11 +54,40 @@ function setup() {
 
   background(0);
   global.grid.show();
+
+  global.setup = true;
+}
+
+function setup() {
+  var canvas = createCanvas(global.width, global.height);
+  canvas.parent("canvas");
+
+  // make sure jQuery is loaded
+  function waitForjQuery() {
+    if ( webconsole ) {
+      start();
+    }
+    else {
+      setTimeout(waitForjQuery, 1000);
+    }
+  }
+  waitForjQuery();
 }
 
 function draw() {
+  if ( !global.setup ) {
+    return;
+  }
+
+  var state = 0;
   for (var i=0; i < global.steps; i++) {
-    global.astar.step();
+    state = global.astar.step();
   }
   global.astar.show();
+
+  if (state < 0) {
+    var delay = 3000;
+    webconsole.log("New grid in " + delay + "ms");
+    setTimeout(start, delay);
+  }
 }
