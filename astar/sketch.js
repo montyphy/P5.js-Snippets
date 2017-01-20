@@ -68,7 +68,7 @@ function setup() {
       start();
     }
     else {
-      setTimeout(waitForjQuery, 1000);
+      setTimeout(waitForjQuery, 10);
     }
   }
   waitForjQuery();
@@ -86,7 +86,7 @@ function draw() {
   global.astar.show();
 
   if (state < 0) {
-    var delay = 3000;
+    var delay = 2000;
     webconsole.log("New grid in " + delay + "ms");
     setTimeout(start, delay);
   }
